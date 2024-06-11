@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_navigation"
+        android:icon="@drawable/ic_navigation"
+        android:title="내비게이션" />
+    <item
+        android:id="@+id/nav_bookmark"
+        android:icon="@drawable/ic_bookmark"
+        android:title="즐겨찾기" />
+    <item
+        android:id="@+id/nav_near"
+        android:icon="@drawable/ic_near"
+        android:title="내 주변 주차장 찾기" />
+    <item
+        android:id="@+id/nav_map_standard"
+        android:icon="@drawable/ic_map_standard"
+        android:title="목적지 주변 주차장 찾기" />
+</menu>
