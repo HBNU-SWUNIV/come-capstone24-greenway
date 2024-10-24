@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NavigationActivity">
+
+    <!-- 출발지 입력 -->
+    <EditText
+        android:id="@+id/editText_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="출발지 입력"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        android:background="@color/white"/>
+
+    <!-- 도착지 입력 -->
+    <EditText
+        android:id="@+id/editText_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="도착지 입력"
+        android:layout_below="@id/editText_start"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        android:background="@color/white"/>
+
+    <!-- 변환 버튼 -->
+    <ImageButton
+        android:id="@+id/button_swap"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/editText_end"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_swap"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:contentDescription="출발지와 도착지 바꾸기"/>
+
+    <!-- 지도 -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.naver.maps.map.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/button_swap"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 경로 안내 정보 창 -->
+    <LinearLayout
+        android:id="@+id/route_info_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <!-- 주차장 이름 -->
+        <TextView
+            android:id="@+id/parkingNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+
+        <!-- 거리 -->
+        <TextView
+            android:id="@+id/textView_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거리: "/>
+
+        <!-- 소요 시간 -->
+        <TextView
+            android:id="@+id/textView_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소요시간: "/>
+
+        <!-- 예상 주차장 혼잡도 -->
+        <TextView
+            android:id="@+id/congestionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예상 주차장 혼잡도: " />
+
+        <!-- 도착 예정 시간과 새로고침 버튼 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 도착 예정 시간 -->
+            <TextView
+                android:id="@+id/textView_arrival_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도착 예정 시간:"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+            <!-- 새로고침 버튼 -->
+            <ImageButton
+                android:id="@+id/button_refresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_refresh"
+                android:background="@android:color/transparent"
+                android:contentDescription="새로고침"
+                android:scaleType="fitCenter"
+                android:padding="8dp"/>
+        </RelativeLayout>
+
+        <!-- 안내 시작 버튼 -->
+        <Button
+            android:id="@+id/button_start_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="안내 시작"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

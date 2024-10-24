@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/bike_parking_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike Parking Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/bike_parking_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading address..."
+        android:layout_below="@id/bike_parking_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"/>
+
+    <ImageButton
+        android:id="@+id/bookmarker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_empty_bookmarker"
+        android:contentDescription="즐겨찾기 버튼" />
+</RelativeLayout>

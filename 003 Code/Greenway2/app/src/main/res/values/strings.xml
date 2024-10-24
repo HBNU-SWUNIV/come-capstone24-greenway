@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Greenway</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- 필터 옵션 추가 -->
+    <string-array name="filter_options">
+        <item>모든 주차장</item>
+        <item>자동차 주차장</item>
+        <item>자전거 주차장</item>
+        <item>킥보드 주차장</item>
+    </string-array>
+
+    <string-array name="sorting_options">
+        <item>거리순</item>
+        <item>가격순</item>
+    </string-array>
+</resources>
+

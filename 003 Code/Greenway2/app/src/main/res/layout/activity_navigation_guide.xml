@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 네이버 지도 -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.naver.maps.map.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 상단 남은 거리 및 도로명 -->
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:padding="10dp"
+        android:layout_gravity="top">
+
+        <TextView
+            android:id="@+id/textView_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50m"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- 중앙 속도 제한 및 경로 안내, 상단 바로 아래에 배치 -->
+    <LinearLayout
+        android:id="@+id/speed_limit_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/round_background"
+        android:padding="12dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <ImageView
+            android:id="@+id/imageView_speed_limit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_speed_limit"
+            android:contentDescription="속도 제한 아이콘" />
+
+        <TextView
+            android:id="@+id/textView_speed_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="10dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView_next_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="우회전 88m"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:paddingStart="20dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- 하단 도착 예상 시간 및 전체 남은 거리 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="새로고침"
+            android:padding="5dp"
+            android:src="@drawable/ic_refresh" />
+
+        <TextView
+            android:id="@+id/textView_arrival_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="도착 예정 시간: "
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</FrameLayout>
