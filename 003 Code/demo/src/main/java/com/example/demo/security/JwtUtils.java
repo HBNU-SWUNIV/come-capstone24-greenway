@@ -18,9 +18,9 @@ public class JwtUtils {
     public String generateJwtToken(Authentication authentication) {
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         return Jwts.builder()
-                .setSubject((userPrincipal.getUsername()))
-                .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .setSubject((userPrincipal.getUsername()))  // 유저 ID
+                .setIssuedAt(new Date())  // 토큰 발급 날짜
+                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))  // 토큰 만료 일자
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
